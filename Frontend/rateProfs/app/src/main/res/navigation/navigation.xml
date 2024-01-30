@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/userLoginFragment">
+
+    <fragment
+        android:id="@+id/createUserFragment"
+        android:name="com.example.rateprofs.CreateUserFragment"
+        android:label="Create an Account"
+        tools:layout="@layout/fragment_create_user" >
+        <action
+            android:id="@+id/action_createUserFragment_to_userLoginFragment"
+            app:destination="@id/userLoginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.rateprofs.MainFragment"
+        android:label="Main Screen"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_profFragment"
+            app:destination="@id/profFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_classFragment"
+            app:destination="@id/classFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_studentFragment"
+            app:destination="@id/studentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profFragment"
+        android:name="com.example.rateprofs.ProfFragment"
+        android:label="Professor Information"
+        tools:layout="@layout/fragment_prof" >
+        <action
+            android:id="@+id/action_profFragment_to_reviewFragment"
+            app:destination="@id/reviewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/classFragment"
+        android:name="com.example.rateprofs.ClassFragment"
+        android:label="Class Information"
+        tools:layout="@layout/fragment_class"
+        >
+        <action
+            android:id="@+id/action_classFragment_to_profFragment"
+            app:destination="@id/profFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentFragment"
+        android:name="com.example.rateprofs.StudentFragment"
+        android:label="Your Profile"
+        tools:layout="@layout/fragment_student" />
+    <fragment
+        android:id="@+id/userLoginFragment"
+        android:name="com.example.rateprofs.userLoginFragment"
+        android:label="Welcome!"
+        tools:layout="@layout/fragment_user_login" >
+        <action
+            android:id="@+id/action_userLoginFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_userLoginFragment_to_createUserFragment"
+            app:destination="@id/createUserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reviewFragment"
+        android:name="com.example.rateprofs.ReviewFragment"
+        android:label="Make a Review"
+        tools:layout="@layout/fragment_review" >
+        <action
+            android:id="@+id/action_reviewFragment_to_profFragment"
+            app:destination="@id/profFragment" />
+    </fragment>
+</navigation>
